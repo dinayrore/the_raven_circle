@@ -4,7 +4,7 @@
 
 //global vars for current quote and author in view
 var currentQuote = '';
-var currentAuthor = 'Raven';
+var currentAuthor = '';
 
 //update quote and author in view with fade in/out animation.
 function getQuote(){
