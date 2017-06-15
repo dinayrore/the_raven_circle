@@ -1,0 +1,14 @@
+<%= render 'layouts/navigation' %>
+
+<% provide(:title, "Password Reset") %>
+
+<div class="authform">
+    <%= form_for(:password_reset, url: password_resets_path) do |f| %>
+        <h3>Forgotten Password?</h3><br>
+
+        <%= f.label :email, class: 'pull-left' %>
+        <%= f.email_field :email, :autofocus => true, class: 'form-control' %><br>
+
+        <%= f.submit 'Reset Password', :class => 'button center' %>
+    <% end %>
+</div>
