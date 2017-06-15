@@ -1,6 +1,11 @@
 class PostsController < ApplicationController
 	before_action :admin_user, only: [:new, :create, :edit, :update, :destroy]
 
+	def index
+		tag = Tag.find_by(name: params[:name])
+		@posts = tag.posts
+	end
+
 	def new
 		@post = Post.new
 	end
@@ -10,7 +15,7 @@ class PostsController < ApplicationController
 	end
 
 	def create
-		if current_user == 'raven'
+		if current_user.try(:admin?)
 			@post = Post.new(post_params)
 			if @post.save
 				redirect_to @post
@@ -38,7 +43,7 @@ class PostsController < ApplicationController
 		@post = Post.find(params[:id])
 		@post.destroy
 
-		redirect_to posts_path
+		redirect_to hark_path
 	end
 
 	private
