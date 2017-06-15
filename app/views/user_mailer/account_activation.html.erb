@@ -1,0 +1,10 @@
+<h2>Greetings <%= @user.name %>,</h2>
+
+<p>
+  Welcome to The Raven Circle! Click on the link below to activate your account:
+</p>
+
+<%= link_to "Activate", edit_account_activation_url(@user.activation_token,
+                                                    email: @user.email),
+                                                    class: "btn btn-success align-center" %>
+<h6>Peace &amp; Blessings Be Upon You!</h6>
