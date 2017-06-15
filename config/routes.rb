@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   get  '/hark',     to: 'pages#hark'
   get  '/hark/:id', to: 'posts#show'
+  get 'harks/:name', to: 'posts#index'
+
   get  '/raven',    to: 'pages#about'
   get  '/contact',  to: 'pages#contact'
 
