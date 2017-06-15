@@ -88,26 +88,6 @@
 
             <div class="box">
                 <div class="col-lg-12 text-center">
-                    <% @posts.each do |post| %>
-                    	<div class="post_wrapper">
-                    		<h2 class="blog-title">
-                            <%= post.title %> <br>
-                          <small class="brand-before">
-                              <%= post.created_at.strftime("%B %d, %Y") %>
-                          </small>
-                        </h2>
-                        <p><%= truncate post.body, length: 200 %></p><br>
-                        <%= link_to 'Read More', post, class: "btn btn-default btn-lg" %>
-                    	</div><br>
-                    <% end %>
-                </div>
-                <div class="col-lg-12 text-center">
-                    <ul class="pager">
-                        <li class="previous"><a href="#">&larr; Older</a>
-                        </li>
-                        <li class="next"><a href="#">Newer &rarr;</a>
-                        </li>
-                    </ul>
                 </div>
             </div>
         </div>
