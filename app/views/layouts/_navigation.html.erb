@@ -1,0 +1,32 @@
+<!-- Navigation -->
+<div id="title">
+    <div class="left-raven img-responsive"><%=image_tag("uncaged-raven-left.png")%></div>
+    <div class="right-raven img-responsive"><%=image_tag("uncaged-raven-right.png")%></div>
+    <div class="brand">The Raven Circle</div>
+    <div class="address-bar">Raven G Waters | A Sister Of Spirit </div>
+    <canvas id="fog" height=100% width=100%></canvas>
+</div>
+
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <!-- navbar-brand is hidden on larger screens, but visible when the menu is collapsed -->
+            <%= link_to 'The Raven Circle', root_path, class: 'navbar-brand' %>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <%= render 'layouts/navigation_links' %>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>

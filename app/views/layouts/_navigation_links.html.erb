@@ -1,0 +1,25 @@
+<%# add navigation links to this file %>
+<li>
+    <%= link_to 'Home', root_path %>
+</li>
+<li>
+    <%= link_to 'About Raven', '/raven' %>
+</li>
+<li>
+    <%= link_to 'Hark', '/hark' %>
+</li>
+<li>
+    <%= link_to 'Contact', '/contact' %>
+</li>
+<li>
+    <%= link_to 'Signup', '/signup' %>
+</li>
+<% if logged_in? %>
+      <li>
+      <%= link_to('Logout', '/logout', destroy_user_session_path, method: :delete) %>
+      </li>
+<% else %>
+      <li>
+      <%= link_to('Login', '/login')  %>
+      </li>
+<% end %>
