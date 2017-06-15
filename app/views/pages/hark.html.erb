@@ -1,0 +1,123 @@
+<%= render 'layouts/navigation' %>
+
+<% provide(:title, "Hark The Raven") %>
+
+<div class="container">
+    <div class="row">
+        <div class="box">
+            <div class="col-lg-12">
+                <br>
+                <hr class="tagline-divider">
+                <h2 class="intro-text text-center">Hark
+                    <strong>The Raven</strong>
+                </h2>
+                <hr class="tagline-divider">
+                <br>
+                <br>
+            </div>
+
+            <div class="box">
+                <div class="col-lg-12 text-center">
+                    <div id="carousel-example-generic" class="carousel slide">
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner">
+                            <div class="item active">
+                              <%= image_tag("carousel/deep-waters.jpg") %><br>
+                              <div class="brand-name">Deep Waters</div>
+                              <hr class="tagline-divider">
+                              <h2 class="brand-before">
+                                  <small>Depth within the water, explains the insight and Depth of Raven.</small>
+                              </h2>
+                              <h2 class="brand-before">
+                                  <small>
+                                    If you are looking to read something to help change your perspective on your world or what it means to be living in this time and place these posts are for you.
+                                </small>
+                              </h2>
+                            </div>
+                            <div class="item">
+                              <%= image_tag("carousel/moments-in-motion.jpg") %><br>
+                              <div class="brand-name">Moments In Motion</div>
+                              <hr class="tagline-divider">
+                              <h2 class="brand-before">
+                                  <small>Moments in motion means to connect the mind, body and spirit.</small>
+                              </h2>
+                              <h2 class="brand-before">
+                                  <small>
+                                    Here Raven will share her experiences on her journey towards a healthier balanced life style. Humor matched with insight, these posts are a wonderful read to lift the spirit and stay grounded.
+                                  </small>
+                              </h2>
+                            </div>
+                            <div class="item">
+                              <%= image_tag("carousel/underlying-developments.jpg") %><br>
+                              <div class="brand-name">Underlying Developments</div>
+                              <hr class="tagline-divider">
+                              <h2 class="brand-before">
+                                  <small>Underlying Developments deals with all subjects and that which lies beyond.</small>
+                              </h2>
+                              <h2 class="brand-before">
+                                  <small>
+                                    The essence that drives all things. The something, or the nothing at all. These posts are here to help direct one to their own understanding.
+                                </small>
+                              </h2>
+                            </div>
+                            <div class="item">
+                              <%= image_tag("carousel/seeds-of-change.jpg") %><br>
+                              <div class="brand-name">Seeds Of Change</div>
+                              <hr class="tagline-divider">
+                              <h2 class="brand-before">
+                                  <small>Our world is a precious gift. Forever changing and growing.</small>
+                              </h2>
+                              <h2 class="brand-before">
+                                  <small>
+                                      Seeds Of Change are the thoughts and actions that lead one to be a natural healer in our world. Are you ready for a change?.
+                                </small>
+                              </h2>
+                            </div>
+                        </div>
+
+                        <!-- Controls -->
+                        <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                            <span class="icon-prev"></span>
+                        </a>
+                        <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                            <span class="icon-next"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="col-lg-12 text-center">
+                    <% @posts.each do |post| %>
+                    	<div class="post_wrapper">
+                    		<h2 class="blog-title">
+                            <%= post.title %> <br>
+                          <small class="brand-before">
+                              <%= post.created_at.strftime("%B %d, %Y") %>
+                          </small>
+                        </h2>
+                        <p><%= truncate post.body, length: 200 %></p><br>
+                        <%= link_to 'Read More', post, class: "btn btn-default btn-lg" %>
+                    	</div><br>
+                    <% end %>
+                </div>
+                <div class="col-lg-12 text-center">
+                    <ul class="pager">
+                        <li class="previous"><a href="#">&larr; Older</a>
+                        </li>
+                        <li class="next"><a href="#">Newer &rarr;</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /.container -->
+
+<!-- Carousel -->
+<script>
+  $('.carousel').carousel({
+      interval: 5000 //changes the speed
+  });
+</script>

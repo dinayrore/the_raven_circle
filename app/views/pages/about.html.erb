@@ -1,0 +1,114 @@
+<%= render 'layouts/navigation' %>
+
+<% provide(:title, "Raven") %>
+
+
+<div class="container">
+    <div class="row">
+        <div class="box">
+            <div class="col-lg-12">
+                <hr class="tagline-divider">
+                <h2 class="intro-text text-center">My Story:
+                    <strong>Finding My Wings</strong>
+                </h2>
+                <hr class="tagline-divider">
+                <br>
+                <br>
+            </div>
+            <div class="col-md-6">
+                <%= link_to image_tag("raven-profile.jpg") %>
+            </div>
+            <br>
+            <div class="col-md-6" id="about">
+                <p>No life has clean beginnings. I was lost. The life I thought was wrapping up. My <i>"happily ever after"</i> was a false truth. This is when I first began to discover my wings.</p>
+                <p>From the ashes, like a Pheonix, I began to create my <i>"happily ever after"</i>, every day! I thought I had figured out all there was <i>within</i>, but truth be told I had yet to open many doors.
+                <p>I found the experiences of my past had new light and meaning. The many dots of my life were now being connected. I went from a mindset where I felt removed from time and space, to wielding it.</p>
+                <p>This journey is when my wings took flight. I will forever be thankful to the events that helped propel my transformation into motion. Even though at the time those moments may not have been seen as the gift, they were. I am truly grateful for them, and the opportunity to share my life with you.</p>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="box">
+            <div class="col-lg-12">
+                <hr class="tagline-divider">
+                <h2 class="intro-text text-center">My
+                    <strong>Specialties</strong>
+                </h2>
+                <hr class="tagline-divider">
+            </div>
+            <div class="col-sm-3 text-center">
+              <div class="singlecard">
+                  <div id="card1" class="card">
+                    <figure class="front"><%=image_tag("starchild-tarot.jpg")%></figure>
+                    <figure class="back"><%=image_tag("tarot.jpg")%>
+                      <div class="description">
+                        <p class="brand-before">Always conducted with positive intentions. Here you will discover where your path is headed and how to change direction if needed. All messages come to best serve you in your direction with work, home, and everyday life. Is your yesterday holding you back from today, or tomorrow?</p>
+                      </div>
+                    </figure>
+                  </div>
+                </div>
+                <h2 class="intro-text text-center">
+                  <strong>Tarot</strong>
+                </h2>
+            </div>
+            <div class="col-sm-3 text-center">
+              <div class="singlecard">
+                  <div id="card1" class="card">
+                    <figure class="front"><%=image_tag("starchild-tarot.jpg")%></figure>
+                    <figure class="back"><%=image_tag("pendulum.JPG")%>
+                      <div class="description">
+                        <p class="brand-before">Filled with questions? The pendulum has answers! Using the energy and our collective consciousness watch the pendulum dance to your yes or no questions. Please know that not all answers will be revealed until the time is right. Will the pendulum answer some of the burning questions that plague your mind? The answer could be yes!</p>
+                      </div>
+                    </figure>
+                  </div>
+                </div>
+                <h2 class="intro-text text-center">
+                  <strong>Pendulum</strong>
+                </h2>
+            </div>
+            <div class="col-sm-3 text-center">
+                <div class="singlecard">
+                    <div id="card1" class="card">
+                      <figure class="front"><%=image_tag("starchild-tarot.jpg")%></figure>
+                      <figure class="back"><%=image_tag("reiki.jpeg")%>
+                        <div class="description">
+                          <p class="brand-before">If you have ever experienced a pain that just won't go away, Reiki is the option for you. You may carry stress in your shoulders, or tiredness behind your eyes. Our bodies hold a lot within. With the art of Reiki, we begin to better understand that our world runs on the energy we put out and take in. Experience tranquility with Reiki.</p>
+                        </div>
+                      </figure>
+                    </div>
+                </div>
+                <h2 class="intro-text text-center">
+                  <strong>Reiki</strong>
+                </h2>
+            </div>
+            <div class="col-sm-3 text-center">
+              <div class="singlecard">
+                  <div id="card1" class="card">
+                    <figure class="front"><%=image_tag("starchild-tarot.jpg")%></figure>
+                    <figure class="back"><%=image_tag("spiritual-counseling.jpg")%>
+                      <div class="description">
+                        <p class="brand-before">Life is a spiritual journey. I have been blessed by Amma (Mata Amritanandamayi) Sri Karunamayi, whom named me a leader and reverend granted me a wonderful and distinct insight on the path of spiritual growth. I am willing and able to help you with your own spiritual growth in whatever form it may be.</p>
+                      </div>
+                    </figure>
+                  </div>
+                </div>
+                <h2 class="intro-text text-center">
+                  <strong>Spiritual Counseling</strong>
+                </h2>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+<!-- /.container -->
+
+<!-- Tarot Cards -->
+<script>
+$(function() {
+  $('.card').click( function( event ) {
+    $( event.currentTarget ).toggleClass('flipped');
+  });
+});
+</script>
