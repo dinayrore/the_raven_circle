@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   get  '/hark',     to: 'pages#hark'
-  get  '/hark/:id', to: 'posts#show'
   get 'harks/:name', to: 'posts#index'
 
   get  '/raven',    to: 'pages#about'
@@ -20,7 +19,7 @@ Rails.application.routes.draw do
   resources :users
   resources :account_activations, only: [:edit]
   resources :password_resets, only: [:new, :create, :edit, :update]
-  resources :posts do
-  	resources :comments
+  resources :posts, shallow: true do
+  	resources :comments, only: [:create, :destroy]
   end
 end
