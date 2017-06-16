@@ -55,6 +55,7 @@ body {
 }
 
 
+
 img {
   @extend .img-responsive;
   margin: 0 auto;
@@ -137,6 +138,17 @@ section {
   @extend .btn-xs;
 }
 
+.alert-alert {
+  @extend .alert-danger;
+}
+
+.alert-notice {
+  @extend .alert-warning;
+}
+
+.alert-success {
+  @extend .alert-success;
+}
 ///////////////////
 // Crystal Ball //
 //////////////////
@@ -209,7 +221,7 @@ $buttonBG: radial-gradient(circle at 50% 120%, darken(#81e8f6, 20), darken(#76de
   max-height: 400px;
   padding: 30px 0;
   left: 50%;
-  top: 80%;
+  top: 75%;
   transform: translate(-50%, -50%);
   font-family: 'Nunito', sans-serif;
   font-weight: 700;
@@ -392,5 +404,52 @@ $buttonBG: radial-gradient(circle at 50% 120%, darken(#81e8f6, 20), darken(#76de
   }
   .right-raven {
     display: none;
+  }
+  #text {
+    width: 400px;
+    position: absolute;
+    max-height: 400px;
+    padding: 30px 0;
+    left: 250px;
+    top: 300px;
+    transform: translate(-50%, -50%);
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    background: linear-gradient(45deg, #14F5A2, #F55651, #23A5C2, #C2235F);
+    background-size: 400% 400%;
+    font-size: 26px;
+    animation: gradientShift 25s ease infinite;
+    opacity: 0;
+    z-index: 1;
+    color: $textFallbackColor;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: url(#turb);
+    text-shadow: 0px 0px 0px rgba(255, 255, 255, 0.5);
+  }
+
+  #author {
+    width: 400px;
+    position: absolute;
+    max-height: 400px;
+    padding: 30px 0;
+    left: 250px;
+    top: 250px;
+    transform: translate(-50%, -50%);
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    background: linear-gradient(45deg, #14F5A2, #F55651, #23A5C2, #C2235F);
+    background-size: 400% 400%;
+    font-size: 26px;
+    animation: gradientShift 25s ease infinite;
+    opacity: 0;
+    z-index: 1;
+    color: $textFallbackColor;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: url(#turb);
+    text-shadow: 0px 0px 0px rgba(255, 255, 255, 0.5);
+    font-style: italic;
+    margin: 200px 0;
   }
 }
