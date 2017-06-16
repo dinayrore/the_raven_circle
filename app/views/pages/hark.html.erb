@@ -91,7 +91,7 @@
                   <% @tags = Tag.all.order('created_at DESC') %>
                   <p>
                     <% @tags.each do |tag| %>
-                        #<%= link_to tag.name, "/harks/#{tag.name}" %>,
+                        #<%= link_to tag.name, "/harks/#{tag.name}" %>
                     <% end %>
                   </p>
                 </div>
