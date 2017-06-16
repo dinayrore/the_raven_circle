@@ -18,6 +18,7 @@ class PostsController < ApplicationController
 		if current_user.try(:admin?)
 			@post = Post.new(post_params)
 			if @post.save
+				flash[:success] = "Post created!"
 				redirect_to @post
 			else
 				render 'new'
