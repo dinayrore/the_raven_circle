@@ -540,4 +540,16 @@ $buttonBG: radial-gradient(circle at 50% 120%, darken(#81e8f6, 20), darken(#76de
             transform: translateX( -100% ) rotateY( -180deg );
     }
   }//END singlecard
+  .brand-name {
+    margin: 0;
+    font-size: 30px;
+    color: #333;
+    font-family: "Josefin Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
+  }
+  .brand-before, .brand-name {
+    text-transform: capitalize;
+  }
+  .brand-before, h2 {
+    font-size: 1.25em;
+  }
 }
