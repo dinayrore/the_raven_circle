@@ -1,15 +1,17 @@
 class CommentsController < ApplicationController
 	def create
-		@comment = Comment.new(comment_params)
-		@comment.user_id = current_user.id
-		@comment.post = Post.find params[:post_id]
-			if @comment.save
-				flash[:success] = "Your comment has been saved. Thank you for contributing to the conversation."
-				redirect_to :back
-			else
-				flash[:danger] = "Existance is mysterious. Your comment was not saved."
-				redirect_to post_path(@post)
-			end
+		if logged_in?
+			@comment = Comment.new(comment_params)
+			@comment.user_id = current_user.id
+			@comment.post = Post.find params[:post_id]
+				if @comment.save
+					flash[:success] = "Your comment has been saved. Thank you for contributing to the conversation."
+					redirect_to :back
+				end
+		else
+			flash[:danger] = "Existance is mysterious. You must have an account to post comments."
+			redirect_to :back
+		end
 	end
 
 	def destroy
@@ -20,7 +22,7 @@ class CommentsController < ApplicationController
 			redirect_to :back
 		else
 			flash[:danger] = "Darkness falls. You do not have permission to perform this function."
-			redirect_to post_path(@post)
+			redirect_to :back
 		end
 	end
 
