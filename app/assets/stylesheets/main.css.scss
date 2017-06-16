@@ -28,11 +28,11 @@ body {
 }
 
 .left-raven {
-  position: absolute;
+  position: relative;
 }
 
 .right-raven {
-  position: absolute;
+  position: relative;
   right: 0px;
 }
 
@@ -285,19 +285,6 @@ $buttonBG: radial-gradient(circle at 50% 120%, darken(#81e8f6, 20), darken(#76de
   height: 40px;
 }
 
-#tweet-quote {
-  height: 40px;
-  display: block;
-  border-radius: 12px;
-  width: 50px;
-  padding: 8px;
-  margin-bottom: 5%;
-  i {
-    color: white;
-    font-size: 25px;
-  }
-}
-
 //////////////////
 // Tarot Cards //
 ////////////////
@@ -390,3 +377,20 @@ $buttonBG: radial-gradient(circle at 50% 120%, darken(#81e8f6, 20), darken(#76de
           transform: translateX( -100% ) rotateY( -180deg );
   }
 }//END singlecard
+
+
+/////////////////////
+// Responsiveness //
+///////////////////
+
+@media (max-width: 60em) {
+  #fog {
+    display: none;
+  }
+  .left-raven {
+    display: none;
+  }
+  .right-raven {
+    display: none;
+  }
+}
