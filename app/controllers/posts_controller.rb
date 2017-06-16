@@ -17,10 +17,12 @@ class PostsController < ApplicationController
 	def create
 		if current_user.try(:admin?)
 			@post = Post.new(post_params)
+			@post.user_id = current_user.id
 			if @post.save
-				flash[:success] = "Post created!"
+				flash[:success] = "We are as one my sister. Your post has been saved."
 				redirect_to @post
 			else
+				flash[:danger] = "Existance is mysterious. Your post was not saved."
 				render 'new'
 			end
 		end
@@ -31,20 +33,29 @@ class PostsController < ApplicationController
 	end
 
 	def update
-		@post = Post.find(params[:id])
-
-		if @post.update(params[:post].permit(:title, :body))
-			redirect_to @post
-		else
-			render 'edit'
+		if current_user.try(:admin?)
+			@post = Post.find(params[:id])
+			@post.user_id = current_user.id
+			if @post.update(params[:post].permit(:title, :body))
+				flash[:success] = "Walk In Harmony. Your post has been updated."
+				redirect_to @post
+			else
+				flash[:danger] = "There is disquiet within you. Your post was not updated."
+				render 'edit'
+			end
 		end
 	end
 
 	def destroy
-		@post = Post.find(params[:id])
-		@post.destroy
-
-		redirect_to hark_path
+		if current_user.try(:admin?)
+			@post = Post.find(params[:id])
+			@post.destroy
+			flash[:success] = "Walk In Harmony. Post destroyed."
+			redirect_to hark_path
+		else
+			flash[:danger] = "Darkness falls. You do not have permission to perform this function."
+			redirect_to hark_path
+		end
 	end
 
 	private
