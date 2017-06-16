@@ -51,7 +51,11 @@
 		                    <strong>The Discussion</strong>
 		                </h2>
 										<hr class="tagline-divider"><br>
-										<%= render "comments/form" %>
+                    <%= form_for([@post, @post.comments.build]) do |f| %>
+                    	<%= f.text_area :body, class: 'comment-textbox' %><br>
+                    	<br>
+                    	<%= f.submit 'Contribute', class: 'button center' %>
+                    <% end %>
 										<br>
 									</div>
 							</div>
