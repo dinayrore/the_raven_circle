@@ -16,6 +16,10 @@
             </div>
             <div class="col-md-6">
                 <%= image_tag("rinas-rocks.jpg")%>
+                <% if current_user.try(:admin?) %>
+                  <br>
+                  <%= link_to 'View Users', users_path, class: 'button center' %>
+                <% end %>
             </div>
             <br>
             <div class="col-md-6">
