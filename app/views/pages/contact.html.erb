@@ -17,8 +17,12 @@
                 <p class="brand-before">Many studies have shown the positive power of meditation heightens awareness and wellbeing amoung many other things. Guided meditation allows your mind to focus on the words being said until they float away. We respect that meditation is different for all people and welcome you to meditate with us.</p>
 
                 <p class="brand-before">Thursdays (first, second, and last of each month)</p>
-                <p class="brand-before">cost: $ 5.00</p>
-                <p class="brand-before">location: <%= link_to "Rina\'s Rocks", " https://www.google.com/maps/dir/''/rina's+rocks+horsham+pa/@40.1749495,-75.176962,12z/data=!3m1!4b1!4m8!4m7!1m0!1m5!1m1!1s0x89c6ae4b40385317:0x69268cb7d1823ed8!2m2!1d-75.1069221!2d40.1749706", target: '_blank', class: 'custom-link' %></p>
+                <p class="brand-before">To learn more please contact: </p>
+                <p><%= link_to 'oursistersofspirit@aol.com', 'mailto:oursistersofspirit@aol.com', class: 'custom-link' %></p>
+
+
+
+
                 <br>
                 <hr class="tagline-divider">
                 <br>
@@ -27,8 +31,8 @@
                 <p class="brand-before">With open minds we discuss our understanding of all energy and the purpose of working with tools for spells among other questions to be answered too! One thing is for certain, witches are very real, and magic is all around us! It wouldn't be <i>the witching hour</i> if we didn't end in a spell! Will it bring wealth into your life, protection from negativity, find out at the witching hour!</p><br>
 
                 <p class="brand-before">Third Thursday of each month</p>
-                <p class="brand-before">cost: $ 5.00</p>
-                <p class="brand-before">location: <%= link_to "Rina\'s Rocks", " https://www.google.com/maps/dir/''/rina's+rocks+horsham+pa/@40.1749495,-75.176962,12z/data=!3m1!4b1!4m8!4m7!1m0!1m5!1m1!1s0x89c6ae4b40385317:0x69268cb7d1823ed8!2m2!1d-75.1069221!2d40.1749706", target: '_blank', class: 'custom-link' %></p>
+                <p class="brand-before">To learn more please contact: </p>
+                <p><%= link_to 'oursistersofspirit@aol.com', 'mailto:oursistersofspirit@aol.com', class: 'custom-link' %></p>
                 <br>
                 <hr class="tagline-divider">
                 <br>
@@ -58,13 +62,13 @@
                 <p>If you have any direct questions, insights or suggestions please contact me by clicking on the gmail icon below. All thoughts and wishes are important so please feel free to contact me at any time.</p><br>
                 <p>Raven will try to answer all messages promptly, however depending on volume of said messages response time may vary. If there is something you would like to see on this site, please state that too! The Raven circle, like Raven's world is always changing and improving for the better!</p><br>
                 <p>For information about <strong>readings</strong> please contact:</p>
-                <p>Oursistersofspirit@ aol.com</p><br>
+                <p><%= link_to 'oursistersofspirit@aol.com', 'mailto:oursistersofspirit@aol.com', class: 'custom-link' %></p><br>
                 <p>If you wish to see Raven directly, please put Raven in the subject line along with the service your looking for.</p>
                 <p>Thank you for being a part of <strong>The Raven Circle!</strong></p>
             </div>
 
             <div class="col-md-6">
-                <%= image_tag("rinas-rocks.jpg")%><br>
+                <%= image_tag("my-cards.jpg")%><br>
                 <% if current_user.try(:admin?) %>
                   <br>
                   <%= link_to 'View Users', users_path, class: 'button center' %>
