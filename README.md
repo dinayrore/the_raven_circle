@@ -1,4 +1,3 @@
-# README
 # The Raven Circle
 
 Discover a new world of magic, wisdom, and insight through spiritual understanding.
